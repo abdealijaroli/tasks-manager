@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 30px auto;
   overflow: auto;
   padding: 30px 50px 50px 50px;
@@ -19,14 +19,26 @@ body {
   border-radius: 10px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .btn {
+  display: inline-block;
   background: #FFE0E0;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   margin: 5px;
-  font-size: 15px;
+  font-size: 15px;  
+  cursor: pointer;
+  text-decoration: none;
   box-shadow: 0px 2px 2px rgb(214, 213, 213);
+  font-family: inherit;
+  font-weight: 500;
 }
 
 
