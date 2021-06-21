@@ -41,20 +41,6 @@ body {
   font-weight: 500;
 }
 
-.task {
-  background: #f4f4f4;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.task.reminder {
-  border-left: 20px solid #C6FFCF;
-}
-
-/* 
-
 .btn:focus {
   outline: none;
 }
@@ -63,15 +49,32 @@ body {
   transform: scale(0.98);
 }
 
+
 .btn-block {
+  color: white;
+  background-color: black;
   display: block;
-  width: 100%;
+  width: 97.5%;
+  height: 50px;
+  
+}
+
+.task {
+  background: #f4f4f4;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 .task h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.task.reminder {
+  border-left: 20px solid #90EE90;
 }
 
 .add-form {
@@ -86,12 +89,13 @@ body {
   display: block;
 }
 
+
 .form-control input {
-  width: 100%;
+  width: 97.5%;
   height: 40px;
   margin: 5px;
   padding: 3px 7px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .form-control-check {
@@ -106,10 +110,10 @@ body {
 
 .form-control-check input {
   flex: 2;
-  height: 20px;
+  height: 17px;
 }
 
 footer {
   margin-top: 30px;
   text-align: center;
-} */
+}
