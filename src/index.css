@@ -27,6 +27,7 @@ body {
 }
 
 .btn {
+  color: white;
   display: inline-block;
   background: #FFE0E0;
   border: none;
