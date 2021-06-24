@@ -1,32 +1,28 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks] = useState([
-    {
-        id: 1,
-        text: 'Doctors appointment',
-        day: '22nd June at 2:00pm',
-        reminder: true,
-    },
-    {
-        id: 2,
-        text: 'Grocery shopping',
-        day: '25th June at 12:00pm',
-        reminder: true,
-    },
-    {
-        id: 3,
-        text: 'Managers Meeting',
-        day: '29th June at 4:00pm',
-        reminder: false,
-    }
-])
+  const [tasks, setTasks] = useState([])
 
-  //Add task
+  useEffect(()=>{
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks()
+      setTasks(tasksFromServer)
+    }
+    getTasks()
+  }, [])
+
+  // Fetch Tasks
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks')
+    const data = await res.json()
+    return data
+  }
+
+  // Add task
   const addTask = (t) => {
     const id = Math.floor(Math.random()*10000) + 1            //Generating a random number for assigning id.
     const newTask = {id, ...t}
@@ -34,13 +30,13 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
-  //Delete task
+  // Delete task
 
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
-  //Toggle reminder
+  // Toggle reminder
   const toggleReminder = (id) => {
     setTasks(tasks.map((task)=> task.id === id ? 
     ({...task, reminder: !task.reminder}) : 
