@@ -11,6 +11,12 @@
       "day": "29th June at 4:00pm",
       "reminder": true,
       "id": 3
+    },
+    {
+      "text": "Manager's Meeting",
+      "day": " 27th June at 8:00am",
+      "reminder": false,
+      "id": 4
     }
   ]
 }
